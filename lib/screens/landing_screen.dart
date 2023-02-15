@@ -31,7 +31,7 @@ class _LandingScreenState extends State<LandingScreen> with SingleTickerProvider
             ),
             AnimatedTextKit(
                   animatedTexts: [
-                    TypewriterAnimatedText('CAREER TRACKER',
+                    TypewriterAnimatedText('PLACEMENT TRACKER',
                     textAlign: TextAlign.center,
                     textStyle:const TextStyle(
                       color: Color(0xFF0D47A1),

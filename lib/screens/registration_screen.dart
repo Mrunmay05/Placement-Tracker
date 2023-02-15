@@ -48,9 +48,9 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                 const SizedBox(
                   height: 20,
                 ),
-                const InputTextField(hintData: 'Password(min. 8 characters)'),
+                const InputPasswordField(hintData: 'Password(min. 8 characters)'),
                 const SizedBox(height: 20,),
-                const InputTextField(hintData: 'Confirm Password',),
+                const InputPasswordField(hintData: 'Confirm Password',),
                 const SizedBox(height: 20,),
                 LandingButton(color: Color(0xFF0D47A1), text: const Text('Register',style: TextStyle(color: Colors.white,fontFamily: 'Comfortaa',fontSize: 15,fontWeight: FontWeight.w600),), func: (){Navigator.pushNamed(context, LoginScreen.id);})
               ]
