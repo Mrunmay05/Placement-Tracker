@@ -39,11 +39,26 @@ class _LoginScreenState extends State<LoginScreen> {
                 const SizedBox(
                   height: 45,
                 ),
-                const InputTextField(hintData: 'Email',),
+                InputTextField(hintData: 'Email',validate: (value) {
+                  if (value == null || value.isEmpty) {
+                            return 'This field is required';
+                          }
+
+                          // using regular expression
+                          if (!RegExp(r'\S+@\S+\.\S+').hasMatch(value)) {
+                            return "Please enter a valid email address";
+                          }
+                          return "";
+                },),
                 const SizedBox(
                   height: 20,
                 ),
-                const InputPasswordField(hintData: 'Password'),
+                InputPasswordField(hintData: 'Password',validate: (value) {
+                  if(value==null||value.isEmpty||value.length<8){
+                    return 'Password should be of minimum 8 characters!';
+                  }
+                  return "";
+                },),
                 const SizedBox(height: 20,),
                 LandingButton(color: Color(0xFF0D47A1), text: const Text('Log-In',style: TextStyle(color: Colors.white,fontFamily: 'Comfortaa',fontSize: 15,fontWeight: FontWeight.w600),), func: (){Navigator.pushNamed(context, OpeningScreen.id);})
               ]

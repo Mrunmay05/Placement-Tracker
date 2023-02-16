@@ -40,19 +40,42 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                 const SizedBox(
                   height: 45,
                 ),
-                const InputTextField(hintData: 'Full Name',),
+                InputTextField(hintData: 'Full Name',validate: (value) {
+                  if(value==null||value.isEmpty) return 'Please enter some text';
+                  return '';
+                },),
                 const SizedBox(
                   height: 20,
                 ),
-                const InputTextField(hintData: 'Email',),
+                InputTextField(hintData: 'Email',validate: (value) {
+                  if (value == null || value.isEmpty) {
+                            return 'This field is required';
+                          }
+
+                          // using regular expression
+                          if (!RegExp(r'\S+@\S+\.\S+').hasMatch(value)) {
+                            return "Please enter a valid email address";
+                          }
+                          return "";
+                },),
                 const SizedBox(
                   height: 20,
                 ),
-                const InputPasswordField(hintData: 'Password(min. 8 characters)'),
+                InputPasswordField(hintData: 'Password(min. 8 characters)',validate: (value) {
+                  if(value==null||value.isEmpty||value.length<8){
+                    return 'Password should be of minimum 8 characters!';
+                  }
+                  return "";
+                },),
                 const SizedBox(height: 20,),
-                const InputPasswordField(hintData: 'Confirm Password',),
+                InputPasswordField(hintData: 'Confirm Password',validate: (value) {
+                  if(value==null||value.isEmpty||value.length<8){
+                    return 'Password should be of minimum 8 characters!';
+                  }
+                  return "";
+                },),
                 const SizedBox(height: 20,),
-                LandingButton(color: Color(0xFF0D47A1), text: const Text('Register',style: TextStyle(color: Colors.white,fontFamily: 'Comfortaa',fontSize: 15,fontWeight: FontWeight.w600),), func: (){Navigator.pushNamed(context, LoginScreen.id);})
+                LandingButton(color:const Color(0xFF0D47A1), text: const Text('Register',style: TextStyle(color: Colors.white,fontFamily: 'Comfortaa',fontSize: 15,fontWeight: FontWeight.w600),), func: (){Navigator.pushNamed(context, LoginScreen.id);})
               ]
               ),
           ),

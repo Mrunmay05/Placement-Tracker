@@ -2,10 +2,12 @@ import 'package:flutter/material.dart';
 
 class InputTextField extends StatelessWidget {
   final String? hintData;
-  const InputTextField({super.key, this.hintData});
+  final String Function(String?) validate;
+  const InputTextField({super.key, this.hintData, required this.validate});
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      validator: validate,
       autofocus: true,
       textAlign: TextAlign.center,
       decoration: InputDecoration(
@@ -15,15 +17,15 @@ class InputTextField extends StatelessWidget {
           color: Colors.grey
           ),
         contentPadding:
-        EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
-        border: OutlineInputBorder(
+        const EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
+        border:const OutlineInputBorder(
           borderRadius: BorderRadius.all(Radius.circular(22.0)),
           ),
-        enabledBorder: OutlineInputBorder(
+        enabledBorder: const OutlineInputBorder(
           borderSide:BorderSide(color: Color(0xFF0D47A1),),
           borderRadius: BorderRadius.all(Radius.circular(22.0)),
           ),
-        focusedBorder: OutlineInputBorder(
+        focusedBorder:const OutlineInputBorder(
           borderSide:BorderSide(color: Color(0xFF0D47A1),),
           borderRadius: BorderRadius.all(Radius.circular(22.0)),
         ),
@@ -33,10 +35,12 @@ class InputTextField extends StatelessWidget {
 }
 class InputPasswordField extends StatelessWidget {
   final String? hintData;
-  const InputPasswordField({super.key, this.hintData});
+  final String Function(String?) validate;
+  const InputPasswordField({super.key, this.hintData, required this.validate});
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      validator: validate,
       obscureText: true,
       autofocus: true,
       textAlign: TextAlign.center,
@@ -47,15 +51,15 @@ class InputPasswordField extends StatelessWidget {
           color: Colors.grey
           ),
         contentPadding:
-        EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
+        const EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
         border: const OutlineInputBorder(
           borderRadius: BorderRadius.all(Radius.circular(22.0)),
           ),
-        enabledBorder: OutlineInputBorder(
+        enabledBorder: const OutlineInputBorder(
           borderSide:BorderSide(color: Color(0xFF0D47A1),),
           borderRadius: BorderRadius.all(Radius.circular(22.0)),
           ),
-        focusedBorder: OutlineInputBorder(
+        focusedBorder: const OutlineInputBorder(
           borderSide:BorderSide(color: Color(0xFF0D47A1),),
           borderRadius: BorderRadius.all(Radius.circular(22.0)),
         ),
