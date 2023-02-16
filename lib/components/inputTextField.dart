@@ -8,7 +8,6 @@ class InputTextField extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextFormField(
       validator: validate,
-      autofocus: true,
       textAlign: TextAlign.center,
       decoration: InputDecoration(
         fillColor: Colors.black,
@@ -42,7 +41,6 @@ class InputPasswordField extends StatelessWidget {
     return TextFormField(
       validator: validate,
       obscureText: true,
-      autofocus: true,
       textAlign: TextAlign.center,
       decoration: InputDecoration(
         fillColor: Colors.black,

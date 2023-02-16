@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
         DeleteRecord.id:(context) => const DeleteRecord(),
         UpdateScreen.id:(context) => const UpdateScreen(),
       },
-      initialRoute: OpeningScreen.id,
+      initialRoute: LandingScreen.id,
 
     );
   }

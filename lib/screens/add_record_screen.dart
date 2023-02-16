@@ -1,12 +1,12 @@
-import 'dart:ui';
-
+import 'package:tnp_app/constants/const_formats.dart';
 import 'package:flutter/material.dart';
 import 'package:tnp_app/components/inputTextField.dart';
 import '../components/landing_button.dart';
+import 'package:tnp_app/components/operationLabel.dart';
 
 enum Gender { male, female }
 
-enum Branch { CS, IT, EnTc }
+enum Branch { CS, IT, EnTC }
 
 class AddRecord extends StatefulWidget {
   static const String id = 'AddRecord';
@@ -28,10 +28,7 @@ class _AddRecordState extends State<AddRecord> {
         centerTitle: true,
         title: const Text(
           'Add Record',
-          style: TextStyle(
-              fontFamily: 'Comfortaa',
-              fontSize: 20,
-              fontWeight: FontWeight.w600),
+          style: kAppBarTextStyle
         ),
       ),
       body: Container(
@@ -47,56 +44,20 @@ class _AddRecordState extends State<AddRecord> {
               child: Column(
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
-                    Text(
-                      'Add Student',
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                          fontFamily: 'Comfortaa',
-                          fontSize: 22,
-                          fontWeight: FontWeight.w600,
-                          color: Colors.blue[900]),
-                    ),
+                    operationLabelText(operationLabel: 'Add Student',),
                     const SizedBox(
                       height: 45,
                     ),
-                    TextFormField(
-                        validator: ((String? value) {
+                    InputTextField(hintData: 'Full Name',validate: ((String? value) {
                           if (value == null || value.isEmpty) {
                             return 'Please enter some text';
                           }
-                        }),
-                        textAlign: TextAlign.center,
-                        decoration: const InputDecoration(
-                          fillColor: Colors.black,
-                          hintText: 'Full Name',
-                          hintStyle: TextStyle(color: Colors.grey),
-                          contentPadding: EdgeInsets.symmetric(
-                              vertical: 10.0, horizontal: 20.0),
-                          border: OutlineInputBorder(
-                            borderRadius:
-                                BorderRadius.all(Radius.circular(22.0)),
-                          ),
-                          enabledBorder: OutlineInputBorder(
-                            borderSide: BorderSide(
-                              style: BorderStyle.solid,
-                              color: Color(0xFF0D47A1),
-                            ),
-                            borderRadius:
-                                BorderRadius.all(Radius.circular(22.0)),
-                          ),
-                          focusedBorder: OutlineInputBorder(
-                            borderSide: BorderSide(
-                              color: Color(0xFF0D47A1),
-                            ),
-                            borderRadius:
-                                BorderRadius.all(Radius.circular(22.0)),
-                          ),
-                        )),
+                          return "";
+                        })),
                     const SizedBox(
                       height: 20,
                     ),
-                    TextFormField(
-                        validator: (value) {
+                    InputTextField(hintData: 'Email Id',validate: (value) {
                           if (value == null || value.isEmpty) {
                             return 'This field is required';
                           }
@@ -105,147 +66,41 @@ class _AddRecordState extends State<AddRecord> {
                           if (!RegExp(r'\S+@\S+\.\S+').hasMatch(value)) {
                             return "Please enter a valid email address";
                           }
-                          return null;
-                        },
-                        keyboardType: TextInputType.emailAddress,
-                        textAlign: TextAlign.center,
-                        decoration: const InputDecoration(
-                          fillColor: Colors.black,
-                          hintText: 'Email Id',
-                          hintStyle: TextStyle(color: Colors.grey),
-                          contentPadding: EdgeInsets.symmetric(
-                              vertical: 10.0, horizontal: 20.0),
-                          border: OutlineInputBorder(
-                            borderRadius:
-                                BorderRadius.all(Radius.circular(22.0)),
-                          ),
-                          enabledBorder: OutlineInputBorder(
-                            borderSide: BorderSide(
-                              color: Color(0xFF0D47A1),
-                            ),
-                            borderRadius:
-                                BorderRadius.all(Radius.circular(22.0)),
-                          ),
-                          focusedBorder: OutlineInputBorder(
-                            borderSide: BorderSide(
-                              color: Color(0xFF0D47A1),
-                            ),
-                            borderRadius:
-                                BorderRadius.all(Radius.circular(22.0)),
-                          ),
-                        )),
+                          return "";
+                        }, ),
                     const SizedBox(
                       height: 20,
                     ),
-                    TextFormField(
-                        validator: ((value) {
+                    InputTextField(hintData: 'Roll no(E.g 31101)',validate: ((value) {
                           if (value == null || value.isEmpty) {
                             return 'This field is required';
                           }
-                        }),
-                        textAlign: TextAlign.center,
-                        decoration: const InputDecoration(
-                          fillColor: Colors.black,
-                          hintText: 'Roll No(E.g: 31101)',
-                          hintStyle: TextStyle(color: Colors.grey),
-                          contentPadding: EdgeInsets.symmetric(
-                              vertical: 10.0, horizontal: 20.0),
-                          border: OutlineInputBorder(
-                            borderRadius:
-                                BorderRadius.all(Radius.circular(22.0)),
-                          ),
-                          enabledBorder: OutlineInputBorder(
-                            borderSide: BorderSide(
-                              color: Color(0xFF0D47A1),
-                            ),
-                            borderRadius:
-                                BorderRadius.all(Radius.circular(22.0)),
-                          ),
-                          focusedBorder: OutlineInputBorder(
-                            borderSide: BorderSide(
-                              color: Color(0xFF0D47A1),
-                            ),
-                            borderRadius:
-                                BorderRadius.all(Radius.circular(22.0)),
-                          ),
-                        )),
+                          return "";
+                        }),),
                     const SizedBox(
                       height: 20,
                     ),
-                    TextFormField(
-                        validator: (value) {
+                    InputTextField(hintData: 'Contact No',validate: (value) {
                           if (value!.length < 10 ||
                               value.length > 10 ||
                               value == null ||
                               value.isEmpty) {
                             return "Enter a valid contact number";
                           }
-                        },
-                        textAlign: TextAlign.center,
-                        decoration: const InputDecoration(
-                          fillColor: Colors.black,
-                          hintText: 'Contact Number',
-                          hintStyle: TextStyle(color: Colors.grey),
-                          contentPadding: EdgeInsets.symmetric(
-                              vertical: 10.0, horizontal: 20.0),
-                          border: OutlineInputBorder(
-                            borderRadius:
-                                BorderRadius.all(Radius.circular(22.0)),
-                          ),
-                          enabledBorder: OutlineInputBorder(
-                            borderSide: BorderSide(
-                              color: Color(0xFF0D47A1),
-                            ),
-                            borderRadius:
-                                BorderRadius.all(Radius.circular(22.0)),
-                          ),
-                          focusedBorder: OutlineInputBorder(
-                            borderSide: BorderSide(
-                              color: Color(0xFF0D47A1),
-                            ),
-                            borderRadius:
-                                BorderRadius.all(Radius.circular(22.0)),
-                          ),
-                        )),
+                          return "";
+                        },),
                     const SizedBox(
                       height: 20,
                     ),
-                    TextFormField(
-                        validator: (value) {
+                    InputTextField(hintData: 'College Registration Id',validate: (value) {
                           if (value == null ||
                               value.isEmpty ||
                               value.length < 11 ||
                               value.length > 11) {
                             return "Enter a valid registration id";
                           }
-                        },
-                        textAlign: TextAlign.center,
-                        decoration: const InputDecoration(
-                          fillColor: Colors.black,
-                          hintText: 'College Registration Id',
-                          hintStyle: TextStyle(color: Colors.grey),
-                          contentPadding: EdgeInsets.symmetric(
-                              vertical: 10.0, horizontal: 20.0),
-                          border: OutlineInputBorder(
-                            borderRadius: BorderRadius.all(
-                              Radius.circular(22.0),
-                            ),
-                          ),
-                          enabledBorder: OutlineInputBorder(
-                            borderSide: BorderSide(
-                              color: Color(0xFF0D47A1),
-                            ),
-                            borderRadius:
-                                BorderRadius.all(Radius.circular(22.0)),
-                          ),
-                          focusedBorder: OutlineInputBorder(
-                            borderSide: BorderSide(
-                              color: Color(0xFF0D47A1),
-                            ),
-                            borderRadius:
-                                BorderRadius.all(Radius.circular(22.0)),
-                          ),
-                        )),
+                          return "";
+                        },),
                     const SizedBox(
                       height: 20,
                     ),
@@ -323,7 +178,7 @@ class _AddRecordState extends State<AddRecord> {
                         style: TextStyle(fontFamily: 'Comfortaa'),
                       ),
                       groupValue: _br,
-                      value: Branch.EnTc,
+                      value: Branch.EnTC,
                       onChanged: (Branch? br) {
                         setState(() {
                           _br = br;
@@ -348,7 +203,7 @@ class _AddRecordState extends State<AddRecord> {
                         func: () {
                           if (_formKey.currentState!.validate()) {}
                         }),
-                        SizedBox(height: 20,)
+                        const SizedBox(height: 20,)
                   ]),
             ),
           ),
@@ -357,3 +212,7 @@ class _AddRecordState extends State<AddRecord> {
     );
   }
 }
+
+
+
+
