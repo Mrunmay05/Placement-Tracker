@@ -5,7 +5,7 @@ class InputTextField extends StatelessWidget {
   const InputTextField({super.key, this.hintData});
   @override
   Widget build(BuildContext context) {
-    return TextField(
+    return TextFormField(
       autofocus: true,
       textAlign: TextAlign.center,
       decoration: InputDecoration(
@@ -36,7 +36,7 @@ class InputPasswordField extends StatelessWidget {
   const InputPasswordField({super.key, this.hintData});
   @override
   Widget build(BuildContext context) {
-    return TextField(
+    return TextFormField(
       obscureText: true,
       autofocus: true,
       textAlign: TextAlign.center,
