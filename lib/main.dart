@@ -9,7 +9,14 @@ import 'package:tnp_app/screens/update_record_screen.dart';
 import 'package:tnp_app/screens/general_student_list.dart';
 import 'package:tnp_app/screens/placed_student_screen.dart';
 import 'package:tnp_app/screens/not_placed_screen.dart';
+import 'package:flutter/services.dart';
 void main(){
+  WidgetsFlutterBinding.ensureInitialized();
+  // Step 3
+  SystemChrome.setPreferredOrientations([
+    DeviceOrientation.portraitUp,
+    DeviceOrientation.portraitDown,
+  ]).then((value) => runApp(MyApp()));
   runApp(MyApp());
 }
 
