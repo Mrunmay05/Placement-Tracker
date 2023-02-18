@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-
+import 'package:tnp_app/screens/general_student_list.dart';
 import '../components/gridTile.dart';
+import 'package:tnp_app/screens/placed_student_screen.dart';
+import 'package:tnp_app/screens/not_placed_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   static const String id='HomeScreen';
@@ -30,9 +32,9 @@ class _HomeScreenState extends State<HomeScreen> {
           padding:const EdgeInsets.all(10),
           child: GridView(gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2,mainAxisSpacing: 10,crossAxisSpacing: 10),
           children: [
-            Grid_Tile(description: 'Student List',tileColor: Color(0xFF0D47A1),textColor: Colors.white,onPressed: (){},),
-            Grid_Tile(description: 'Placed Students', tileColor: Color(0xFF5193AF), textColor: Color(0xFF0D47A1),onPressed: () {},),
-            Grid_Tile(description: 'Not Placed Students', tileColor: Color(0xFF5193AF), textColor: Color(0xFF0D47A1),onPressed: () {},),
+            Grid_Tile(description: 'Student List',tileColor: Color(0xFF0D47A1),textColor: Colors.white,onPressed: (){Navigator.pushNamed(context, StudentList.id);},),
+            Grid_Tile(description: 'Placed Students', tileColor: Color(0xFF5193AF), textColor: Color(0xFF0D47A1),onPressed: () {Navigator.pushNamed(context, PlacedScreen.id);},),
+            Grid_Tile(description: 'Not Placed Students', tileColor: Color(0xFF5193AF), textColor: Color(0xFF0D47A1),onPressed: () {Navigator.pushNamed(context, NotPlacedScreen.id);},),
             Grid_Tile(description: 'Company Wised Placed List',tileColor: Color(0xFF0D47A1),textColor: Colors.white,onPressed: () {},),
           ],
           ),

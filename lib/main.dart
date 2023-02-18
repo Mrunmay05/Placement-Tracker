@@ -6,7 +6,9 @@ import 'package:tnp_app/screens/registration_screen.dart';
 import 'package:tnp_app/screens/add_record_screen.dart';
 import 'package:tnp_app/screens/delete_record_screen.dart';
 import 'package:tnp_app/screens/update_record_screen.dart';
-
+import 'package:tnp_app/screens/general_student_list.dart';
+import 'package:tnp_app/screens/placed_student_screen.dart';
+import 'package:tnp_app/screens/not_placed_screen.dart';
 void main(){
   runApp(MyApp());
 }
@@ -25,6 +27,9 @@ class MyApp extends StatelessWidget {
         AddRecord.id:(context) => const AddRecord(),
         DeleteRecord.id:(context) => const DeleteRecord(),
         UpdateScreen.id:(context) => const UpdateScreen(),
+        StudentList.id:(context) => const StudentList(),
+        PlacedScreen.id:(context) => const PlacedScreen(),
+        NotPlacedScreen.id:(context) => const NotPlacedScreen()
       },
       initialRoute: LandingScreen.id,
 

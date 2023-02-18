@@ -1,11 +1,11 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:tnp_app/components/gridTile.dart';
 import 'package:tnp_app/screens/add_record_screen.dart';
 import 'package:tnp_app/screens/delete_record_screen.dart';
 import 'package:tnp_app/screens/update_record_screen.dart';
 import 'package:tnp_app/screens/home_screen.dart';
+
 
 class OpeningScreen extends StatefulWidget {
   static const String id='OpeningScreen';
