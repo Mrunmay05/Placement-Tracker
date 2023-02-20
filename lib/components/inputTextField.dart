@@ -3,13 +3,16 @@ import 'package:flutter/material.dart';
 class InputTextField extends StatelessWidget {
   final String? hintData;
   final String Function(String?) validate;
-  const InputTextField({super.key, this.hintData, required this.validate});
+  final String labelName;
+  const InputTextField({super.key, this.hintData, required this.validate, required this.labelName});
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+
       validator: validate,
       textAlign: TextAlign.center,
       decoration: InputDecoration(
+        label: Text(labelName),
         fillColor: Colors.black,
         hintText: hintData,
         hintStyle: const TextStyle(
@@ -35,7 +38,8 @@ class InputTextField extends StatelessWidget {
 class InputPasswordField extends StatelessWidget {
   final String? hintData;
   final String Function(String?) validate;
-  const InputPasswordField({super.key, this.hintData, required this.validate});
+  final String labelName;
+  const InputPasswordField({super.key, this.hintData, required this.validate, required this.labelName});
   @override
   Widget build(BuildContext context) {
     return TextFormField(
@@ -43,6 +47,7 @@ class InputPasswordField extends StatelessWidget {
       obscureText: true,
       textAlign: TextAlign.center,
       decoration: InputDecoration(
+        labelText: labelName,
         fillColor: Colors.black,
         hintText: hintData,
         hintStyle: const TextStyle(

@@ -49,7 +49,9 @@ class _LoginScreenState extends State<LoginScreen> {
                             return "Please enter a valid email address";
                           }
                           return "";
-                },),
+                },
+                labelName: 'Email',
+                ),
                 const SizedBox(
                   height: 20,
                 ),
@@ -58,7 +60,9 @@ class _LoginScreenState extends State<LoginScreen> {
                     return 'Password should be of minimum 8 characters!';
                   }
                   return "";
-                },),
+                },
+                labelName: 'Password',
+                ),
                 const SizedBox(height: 20,),
                 LandingButton(color: Color(0xFF0D47A1), text: const Text('Log-In',style: TextStyle(color: Colors.white,fontFamily: 'Comfortaa',fontSize: 15,fontWeight: FontWeight.w600),), func: (){Navigator.pushNamed(context, OpeningScreen.id);})
               ]

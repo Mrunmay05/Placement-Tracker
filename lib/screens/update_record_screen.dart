@@ -53,7 +53,10 @@ class _UpdateScreenState extends State<UpdateScreen> {
                             return 'Please enter some text';
                           }
                           return "";
-                        })),
+                        }),
+                        labelName: 'Name',
+                        
+                        ),
                     const SizedBox(
                       height: 20,
                     ),
@@ -67,7 +70,9 @@ class _UpdateScreenState extends State<UpdateScreen> {
                             return "Please enter a valid email address";
                           }
                           return "";
-                        }, ),
+                        },
+                        labelName: 'Email Id', 
+                        ),
                     const SizedBox(
                       height: 20,
                     ),
@@ -76,7 +81,9 @@ class _UpdateScreenState extends State<UpdateScreen> {
                             return 'This field is required';
                           }
                           return "";
-                        }),),
+                        }),
+                        labelName: 'Roll Number',
+                        ),
                     const SizedBox(
                       height: 20,
                     ),
@@ -88,7 +95,9 @@ class _UpdateScreenState extends State<UpdateScreen> {
                             return "Enter a valid contact number";
                           }
                           return "";
-                        },),
+                        },
+                        labelName: 'Contact Number',
+                        ),
                     const SizedBox(
                       height: 20,
                     ),
@@ -100,11 +109,15 @@ class _UpdateScreenState extends State<UpdateScreen> {
                             return "Enter a valid registration id";
                           }
                           return "";
-                        },),
+                        },
+                        labelName: 'College Id',
+                        ),
                     const SizedBox(height: 20,),
                     InputTextField(hintData: 'Placed Company Name',validate: (value) {
                       return '';
-                    },),
+                    },
+                    labelName: 'Company Name',
+                    ),
                     const SizedBox(height: 20,),
                     Divider(
                       color: Colors.blue[900],

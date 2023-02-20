@@ -53,7 +53,7 @@ class _AddRecordState extends State<AddRecord> {
                             return 'Please enter some text';
                           }
                           return "";
-                        })),
+                        }),labelName: 'Name',),
                     const SizedBox(
                       height: 20,
                     ),
@@ -67,7 +67,7 @@ class _AddRecordState extends State<AddRecord> {
                             return "Please enter a valid email address";
                           }
                           return "";
-                        }, ),
+                        }, labelName: 'Email', ),
                     const SizedBox(
                       height: 20,
                     ),
@@ -76,7 +76,7 @@ class _AddRecordState extends State<AddRecord> {
                             return 'This field is required';
                           }
                           return "";
-                        }),),
+                        }),labelName: 'Roll Number',),
                     const SizedBox(
                       height: 20,
                     ),
@@ -88,7 +88,7 @@ class _AddRecordState extends State<AddRecord> {
                             return "Enter a valid contact number";
                           }
                           return "";
-                        },),
+                        },labelName: 'Contact Number',),
                     const SizedBox(
                       height: 20,
                     ),
@@ -100,7 +100,7 @@ class _AddRecordState extends State<AddRecord> {
                             return "Enter a valid registration id";
                           }
                           return "";
-                        },),
+                        },labelName: 'College Reg. Id',),
                     const SizedBox(
                       height: 20,
                     ),

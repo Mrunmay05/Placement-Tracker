@@ -45,6 +45,7 @@ class _DeleteRecordState extends State<DeleteRecord> {
                       if(value==null||value.isEmpty) return 'Please enter some text';
                       return '';
                     },
+                    labelName: 'Name',
                   ),
                   const SizedBox(height: 35,),
                   InputTextField(
@@ -53,6 +54,7 @@ class _DeleteRecordState extends State<DeleteRecord> {
                       if(value==null||value.isEmpty||value.length<11||value.length>11) return 'Enter a valid Registration Id';
                       return '';
                     },
+                    labelName: 'College Reg. Id',
                   ),
                   const SizedBox(height: 35,),
                   LandingButton(color:const Color(0xFF0D47A1), text: Text('Delete Student',style: TextStyle(color: Colors.white,fontFamily: 'Comfortaa',fontSize: 15,fontWeight: FontWeight.w600),), func: (() {

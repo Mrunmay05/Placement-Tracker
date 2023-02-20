@@ -43,7 +43,9 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                 InputTextField(hintData: 'Full Name',validate: (value) {
                   if(value==null||value.isEmpty) return 'Please enter some text';
                   return '';
-                },),
+                },
+                labelName: 'Name',
+                ),
                 const SizedBox(
                   height: 20,
                 ),
@@ -57,7 +59,9 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                             return "Please enter a valid email address";
                           }
                           return "";
-                },),
+                },
+                labelName: 'Email Id',
+                ),
                 const SizedBox(
                   height: 20,
                 ),
@@ -66,14 +70,18 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                     return 'Password should be of minimum 8 characters!';
                   }
                   return "";
-                },),
+                },
+                labelName: 'Password',
+                ),
                 const SizedBox(height: 20,),
                 InputPasswordField(hintData: 'Confirm Password',validate: (value) {
                   if(value==null||value.isEmpty||value.length<8){
                     return 'Password should be of minimum 8 characters!';
                   }
                   return "";
-                },),
+                },
+                labelName: 'Confirm Password',
+                ),
                 const SizedBox(height: 20,),
                 LandingButton(color:const Color(0xFF0D47A1), text: const Text('Register',style: TextStyle(color: Colors.white,fontFamily: 'Comfortaa',fontSize: 15,fontWeight: FontWeight.w600),), func: (){Navigator.pushNamed(context, LoginScreen.id);})
               ]
