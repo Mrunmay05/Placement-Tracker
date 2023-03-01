@@ -11,14 +11,13 @@ class LandingScreen extends StatefulWidget {
   State<LandingScreen> createState() => _LandingScreenState();
 }
 
-class _LandingScreenState extends State<LandingScreen> with SingleTickerProviderStateMixin{
-  AnimationController? controller;
-  Animation? animation;
+class _LandingScreenState extends State<LandingScreen>{
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
         body: Container(
+          
           padding:const EdgeInsets.only(top: 80),
           height: double.infinity,
           width: double.infinity,

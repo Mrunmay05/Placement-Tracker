@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 class InputTextField extends StatelessWidget {
+  // final TextEditingController controller;
   final String? hintData;
   final String Function(String?) validate;
   final String labelName;
@@ -8,7 +9,7 @@ class InputTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-
+      // controller: controller,
       validator: validate,
       textAlign: TextAlign.center,
       decoration: InputDecoration(
@@ -36,13 +37,15 @@ class InputTextField extends StatelessWidget {
   }
 }
 class InputPasswordField extends StatelessWidget {
+  // final TextEditingController controller;
   final String? hintData;
   final String Function(String?) validate;
   final String labelName;
-  const InputPasswordField({super.key, this.hintData, required this.validate, required this.labelName});
+  const InputPasswordField({super.key, this.hintData, required this.validate, required this.labelName,});
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      // controller: controller,
       validator: validate,
       obscureText: true,
       textAlign: TextAlign.center,

@@ -16,3 +16,5 @@ const TextStyle kListTileName=
 const TextStyle kListTileGenderFemale=
   TextStyle(color: Colors.purple,fontFamily: 'Comfortaa',fontSize: 14,fontWeight: FontWeight.w500)
 ;
+
+const baseUrl='';

@@ -17,6 +17,11 @@ class AddRecord extends StatefulWidget {
 }
 
 class _AddRecordState extends State<AddRecord> {
+  late TextEditingController nameController;
+  late TextEditingController emailController;
+  late TextEditingController rollController;
+  late TextEditingController phoneController;
+  late TextEditingController collegeController;
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   Gender? _gen = Gender.male;
   Branch? _br = Branch.CS;
@@ -48,7 +53,9 @@ class _AddRecordState extends State<AddRecord> {
                     const SizedBox(
                       height: 45,
                     ),
-                    InputTextField(hintData: 'Full Name',validate: ((String? value) {
+                    InputTextField(
+                      // controller: nameController,
+                      hintData: 'Full Name',validate: ((String? value) {
                           if (value == null || value.isEmpty) {
                             return 'Please enter some text';
                           }
@@ -57,7 +64,9 @@ class _AddRecordState extends State<AddRecord> {
                     const SizedBox(
                       height: 20,
                     ),
-                    InputTextField(hintData: 'Email Id',validate: (value) {
+                    InputTextField(
+                      // controller: emailController,
+                      hintData: 'Email Id',validate: (value) {
                           if (value == null || value.isEmpty) {
                             return 'This field is required';
                           }
@@ -71,7 +80,9 @@ class _AddRecordState extends State<AddRecord> {
                     const SizedBox(
                       height: 20,
                     ),
-                    InputTextField(hintData: 'Roll no(E.g 31101)',validate: ((value) {
+                    InputTextField(
+                      // controller: rollController,
+                      hintData: 'Roll no(E.g 31101)',validate: ((value) {
                           if (value == null || value.isEmpty) {
                             return 'This field is required';
                           }
@@ -80,7 +91,9 @@ class _AddRecordState extends State<AddRecord> {
                     const SizedBox(
                       height: 20,
                     ),
-                    InputTextField(hintData: 'Contact No',validate: (value) {
+                    InputTextField(
+                      // controller: phoneController,
+                      hintData: 'Contact No',validate: (value) {
                           if (value!.length < 10 ||
                               value.length > 10 ||
                               value == null ||
@@ -92,7 +105,9 @@ class _AddRecordState extends State<AddRecord> {
                     const SizedBox(
                       height: 20,
                     ),
-                    InputTextField(hintData: 'College Registration Id',validate: (value) {
+                    InputTextField(
+                      // controller: collegeController,
+                      hintData: 'College Registration Id',validate: (value) {
                           if (value == null ||
                               value.isEmpty ||
                               value.length < 11 ||
@@ -211,6 +226,10 @@ class _AddRecordState extends State<AddRecord> {
       ),
     );
   }
+}
+
+Future <void> getData() async{
+  
 }
 
 

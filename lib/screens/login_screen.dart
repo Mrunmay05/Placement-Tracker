@@ -11,6 +11,8 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
+  // late TextEditingController emailController;
+  // late TextEditingController passController;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -39,7 +41,9 @@ class _LoginScreenState extends State<LoginScreen> {
                 const SizedBox(
                   height: 45,
                 ),
-                InputTextField(hintData: 'Email',validate: (value) {
+                InputTextField(
+                  // controller: emailController,
+                  hintData: 'Email',validate: (value) {
                   if (value == null || value.isEmpty) {
                             return 'This field is required';
                           }
@@ -55,7 +59,9 @@ class _LoginScreenState extends State<LoginScreen> {
                 const SizedBox(
                   height: 20,
                 ),
-                InputPasswordField(hintData: 'Password',validate: (value) {
+                InputPasswordField(
+                  // controller: passController,
+                  hintData: 'Password',validate: (value) {
                   if(value==null||value.isEmpty||value.length<8){
                     return 'Password should be of minimum 8 characters!';
                   }

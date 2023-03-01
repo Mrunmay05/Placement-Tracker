@@ -13,6 +13,8 @@ class DeleteRecord extends StatefulWidget {
 }
 
 class _DeleteRecordState extends State<DeleteRecord> {
+  late TextEditingController nameController;
+  late TextEditingController collegeController;
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
@@ -40,6 +42,7 @@ class _DeleteRecordState extends State<DeleteRecord> {
                   operationLabelText(operationLabel: 'Delete Student'),
                   const SizedBox(height: 50,),
                   InputTextField(
+                    // controller: nameController,
                     hintData: 'Full Name',
                     validate: (value) {
                       if(value==null||value.isEmpty) return 'Please enter some text';
@@ -49,6 +52,7 @@ class _DeleteRecordState extends State<DeleteRecord> {
                   ),
                   const SizedBox(height: 35,),
                   InputTextField(
+                    // controller: collegeController,
                     hintData: 'College Registration Id',
                     validate: (value) {
                       if(value==null||value.isEmpty||value.length<11||value.length>11) return 'Enter a valid Registration Id';
