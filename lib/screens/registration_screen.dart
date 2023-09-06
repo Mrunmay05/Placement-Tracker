@@ -76,7 +76,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                   ),
                   InputPasswordField(
                     // controller: passController,
-                    hintData: 'Password(min. 8 characters)',
+                    hintData: 'Password(minimum 8 characters)',
                     validate: (value) {
                       if (value == null || value.isEmpty || value.length < 8) {
                         return 'Password should be of minimum 8 characters!';
